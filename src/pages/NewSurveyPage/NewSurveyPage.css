@@ -1,0 +1,27 @@
+.new-survey-page {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        font-size: 56px;
+        font-weight: bold;
+    }
+
+    .new-survey-container {
+        width: 1000px;
+        min-height: 500px;
+        background-color: #EADBC8;
+        border-radius: 16px;
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 16px;
+
+        .inputs-container {
+            margin-top: 40px;
+        }
+    }
+}
