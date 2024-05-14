@@ -54,14 +54,7 @@ const generateCentroids = (points: Point[], k: number) => {
         
         newCentroids.push(centroid);
     }
-    
-    // console.log("chcek")
-    // for(let i = 0; i< newCentroids.length; i++){
-    //     console.log(newCentroids[i])
-    //   }
-    // console.log(JSON.parse(JSON.stringify(newCentroids)))
 
-    // console.log(newCentroids)
     return newCentroids;
 }
 
@@ -127,21 +120,12 @@ export const getClusteredData = (answers: SurveyAnswer[]) => {
 
     let oldAssigmentList: number[] = [];
     let newAssigmentList = findDistsances(points, centroids);
-    let oldPoints = points;
 
     while(!(newAssigmentList.length === oldAssigmentList.length
         && newAssigmentList.every((value, index) => value === oldAssigmentList[index]))) {
         centroids = updateCentroids(centroids, points);
-        console.log(centroids);
         oldAssigmentList = newAssigmentList;
         newAssigmentList = findDistsances(points, centroids);
-        // if(!oldPoints.every((point, index) => point.claster === points[index].claster)) {
-        //     console.log(points)
-        // }
-        // else {
-        //     console.log("same")
-        // }
-        // oldPoints = points;
     }
 
     return points;
